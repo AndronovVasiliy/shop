@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    flex-direction: row;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        li {
+            a {
+                padding: 8px;
+                color: rgba(0, 0, 0, .5);
+                text-decoration: none;
+
+                &:hover {
+                    color: rgba(0, 0, 0, .9);
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ const Hits = () => {
     const [hit, setHit] = useState<ShortDescriptionProductType[]>([])
 
     useEffect(() => {
-        axios.get('http://localhost:7070/api/top-sales').then(res => setHit(res.data))
+        axios.get('https://back-shop-shop.herokuapp.com/api/top-sales').then(res => setHit(res.data))
     }, [])
 
     return (

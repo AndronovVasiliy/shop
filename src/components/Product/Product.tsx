@@ -11,7 +11,7 @@ const Product = () => {
     let [porductItem, setPorduct] = useState<DetailProductType>({} as DetailProductType)
 
     useEffect(() => {
-        axios.get(`http://localhost:7070/api/items/${id.id}`).then(res => setPorduct(res.data))
+        axios.get(`https://back-shop-shop.herokuapp.com/api/items/${id.id}`).then(res => setPorduct(res.data))
 
     }, [id.id])
 

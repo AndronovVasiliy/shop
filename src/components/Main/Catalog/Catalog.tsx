@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/hooks'
 import { getCatalogList, getcatalogCategories, getNewPortion } from '../../../store/reducers/ActionCatalog'
 import CatalogCategories from './CatalogCategories'
 import CatalogSearch from './CatalogSearch'
+import Preloader from '../../common/Preloader/Preloader'
 
 interface PropsType {
     catalog?: boolean
@@ -29,8 +30,8 @@ const Catalog = (props: PropsType) => {
         <article className={styles.catalog}>
             <h2>Каталог</h2>
             {!props.catalog && <CatalogSearch />}
-            <CatalogCategories categories = {categories}/>
-            <ListProducts product={catalogItems} />
+            {!isLoading ? <Preloader /> :<CatalogCategories categories = {categories}/>}
+            {!isLoading ? <Preloader /> : <ListProducts product={catalogItems} />}
             <button disabled = {!isLoading} onClick={() => loadNewPortion()}>Загрузить еще</button>
         </article>
     )
